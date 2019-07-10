@@ -5,7 +5,7 @@
 This challenge tests you on having a fully functional app that is deployed and/or published in github. You should be comfortable with routing, authorization, feature modules, architecture, style guide.
 
 ## The Stack
-Angular w/o Firebase(auth/hosting)
+Angular with or without Firebase(auth/hosting). You can choose to have a local auth strategy to keep the challenge simple.
 
 ## The Process
 1. Fork this GitHub repo
