@@ -37,7 +37,8 @@ Allow users to be able to highlight some text and give them an option to annotat
 ### Task 2
 The annotations should be persisted. When the user logs back in, they'll have the ability to view and edit the the annotations.
 
-### Task 3
+## Bonus Round (not required, but nice-to-have)
+
 The user may wish to tag the annotations by category. So allow the users to add tag to those annotations.
 
 This is an open-ended task so feel free to design and implement it any way you see fit.
