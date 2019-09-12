@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-splash',
-  templateUrl: './splash.component.html',
-  styleUrls: ['./splash.component.less']
+    selector: 'app-splash',
+    templateUrl: './splash.component.html',
+    styleUrls: ['./splash.component.less']
 })
+
+/** 
+ * SplashComponent for displaying the main home page (not authenticated).
+ */
 export class SplashComponent implements OnInit {
 
-  constructor() { }
+    /**
+     * Initializes a new instance of SplashComponent component.
+     */
+    constructor() { }
 
-  ngOnInit() {
-  }
+    /**
+     * OnInit life cycle hook. Called after constructor and the first OnChanges hook.
+     */
+    ngOnInit() {
+    }
 
 }

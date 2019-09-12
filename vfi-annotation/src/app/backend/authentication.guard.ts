@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import {
     CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot,
-    CanActivateChild, NavigationExtras, CanLoad, Route
+    CanActivateChild, CanLoad, Route
 } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
 
-@Injectable({
-    providedIn: 'root',
-})
-
+@Injectable({ providedIn: 'root', })
+/**
+ * Authentication Guard class used in authenticated routing.
+ * @privateRemarks I copied most (but not all) of this from Angular documentation.
+ */
 export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLoad {
-    constructor(private authService: AuthenticationService, private router: Router) { }
+    
+    constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
@@ -27,8 +29,8 @@ export class AuthenticationGuard implements CanActivate, CanActivateChild, CanLo
     }
 
     checkLogin(url: string): boolean {
-        if (this.authService.isSignedIn()) { return true; }
-        this.authService.redirectUrl = url;
+        if (this.authenticationService.isSignedIn()) { return true; }
+        this.authenticationService.redirectUrl = url;
         this.router.navigate(['']);
         return false;
     }

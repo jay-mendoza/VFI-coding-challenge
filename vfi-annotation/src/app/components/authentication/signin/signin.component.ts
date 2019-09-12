@@ -2,27 +2,48 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../../backend/authentication.service';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.less']
+    selector: 'app-signin',
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.less']
 })
+
+/** 
+ * Sign In Component for displaying a sign in form.
+ */
 export class SigninComponent implements OnInit {
-  hide: boolean = true;
-  error: string;
+    
+    /** UI component state. Shows or hides the text in password field. */
+    hide: boolean = true;
+    
+    /** UI component to display error message. */
+    error: string;
 
-  constructor(private authService: AuthenticationService) { }
+    /**
+     * Initializes a new instance of SigninComponent component.
+     * @param {AuthenticationService} authService Injects AuthenticationService instance for authentication functions.
+     */
+    constructor(private authService: AuthenticationService) { }
 
-  ngOnInit() {
-    this.error = '';
-  }
-
-  doSignIn(username: string, password: string) {
-    if (this.authService.signIn(username, password)) {
-      window.location.href = '/home';
+    /**
+     * OnInit life cycle hook. Called after constructor and the first OnChanges hook.
+     */
+    ngOnInit() {
+        this.error = '';
     }
-    else {
-      this.error = 'The entered credentials are incorrect!';
-    }
-  }
 
+    /**
+     * Execute a sign in process.
+     * @param username User's username.
+     * @param password User's password.
+     */
+    doSignIn(username: string, password: string): void {
+        if (this.authService.signIn(username, password)) {
+
+            /** redirect to Home, which needs authenticated session. */
+            window.location.href = '/home';
+        }
+        else {
+            this.error = 'The entered credentials are incorrect!';
+        }
+    }
 }

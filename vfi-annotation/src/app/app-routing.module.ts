@@ -8,12 +8,11 @@ import { SigninComponent } from './components/authentication/signin/signin.compo
 import { SignupComponent } from './components/authentication/signup/signup.component';
 import { SignoutComponent } from './components/authentication/signout/signout.component';
 
-
 import { AuthenticationGuard } from './backend/authentication.guard';
 
 const routes: Routes = [
   { path: '', component: SplashComponent },
-  { path: 'changepassword', component: ChangePasswordComponent },
+  { path: 'changepassword', component: ChangePasswordComponent, canActivate: [AuthenticationGuard] },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signout', component: SignoutComponent },

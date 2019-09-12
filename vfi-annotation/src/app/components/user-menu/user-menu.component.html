@@ -11,7 +11,7 @@
                 <mat-icon>vpn_key</mat-icon>
                 <span>Change Password</span>
             </button>
-            <button  routerLink="/signout" routerLinkActive="active" mat-menu-item>
+            <button routerLink="/signout" routerLinkActive="active" mat-menu-item>
                 <mat-icon>power_settings_new</mat-icon>
                 <span>Sign Out</span>
             </button>
@@ -20,6 +20,7 @@
 </section>
 <section *ngIf="!isAuthenticated">
     <div>
-        Please <a routerLink="/signin" routerLinkActive="active">Sign In</a> or <a routerLink="/signup" routerLinkActive="active">Register</a>.
+        Please <a routerLink="/signin" routerLinkActive="active">Sign In</a> or <a routerLink="/signup"
+            routerLinkActive="active">Register</a>.
     </div>
 </section>

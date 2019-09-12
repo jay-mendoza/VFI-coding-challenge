@@ -1,18 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthenticationService } from '../../backend/authentication.service';
 
 @Component({
-  selector: 'app-user-menu',
-  templateUrl: './user-menu.component.html',
-  styleUrls: ['./user-menu.component.less']
+    selector: 'app-user-menu',
+    templateUrl: './user-menu.component.html',
+    styleUrls: ['./user-menu.component.less']
 })
+
+/** 
+ * User Menu Component for displaying the user menu (in header).
+ */
 export class UserMenuComponent implements OnInit {
-  @Input () currentUsername: string;
-  @Input () isAuthenticated: boolean;
 
-  constructor(private auth: AuthenticationService) { }
+    /** {@inheritDoc AppComponent.currentUsername} */
+    @Input() currentUsername: string;
 
-  ngOnInit() {
-  }
+    /** {@inheritDoc AppComponent.isAuthenticated} */
+    @Input() isAuthenticated: boolean;
 
+    /**
+     * Initializes a new instance of UserMenuComponent component.
+     */
+    constructor() { }
+
+    /**
+     * OnInit life cycle hook. Called after constructor and the first OnChanges hook.
+     */
+    ngOnInit() {
+    }
 }
