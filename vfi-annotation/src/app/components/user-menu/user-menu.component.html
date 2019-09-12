@@ -1,0 +1,25 @@
+<section *ngIf="isAuthenticated">
+    <div>
+        Welcome, {{currentUsername}}
+    </div>
+    <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>perm_identity</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button routerLink="/changepassword" routerLinkActive="active" mat-menu-item>
+                <mat-icon>vpn_key</mat-icon>
+                <span>Change Password</span>
+            </button>
+            <button  routerLink="/signout" routerLinkActive="active" mat-menu-item>
+                <mat-icon>power_settings_new</mat-icon>
+                <span>Sign Out</span>
+            </button>
+        </mat-menu>
+    </div>
+</section>
+<section *ngIf="!isAuthenticated">
+    <div>
+        Please <a routerLink="/signin" routerLinkActive="active">Sign In</a> or <a routerLink="/signup" routerLinkActive="active">Register</a>.
+    </div>
+</section>

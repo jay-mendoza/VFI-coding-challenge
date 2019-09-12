@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
+
+@bg-color: #303030;
+@fg-color: #ffffff;
+@primary: #9c27b0;
+@accent: #69f0ae;
+@error: #f44336;
+
+.no-box {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html { height: 100%; }
+
+body {
+    font-family: 'Comfortaa', cursive;
+    color: @fg-color;
+    background-color: @bg-color;
+    height: 100%;
+
+    .no-box;
+}
+
+a {
+    color: @accent;
+    text-decoration: none;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error {
+    color: @error;
+    margin: 10px;
+}

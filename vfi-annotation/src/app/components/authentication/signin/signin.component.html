@@ -1,0 +1,20 @@
+<section>
+    <form class="form">
+        <mat-form-field class="full-width">
+            <input #username matInput placeholder="Username" >
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <input #password matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button type="button" mat-raised-button (click)="doSignIn(username.value, password.value)">
+            <mat-icon>exit_to_app</mat-icon>
+            Sign in
+        </button>
+    </form>    
+    <div class="error">{{error}}</div>    
+</section>
