@@ -21,6 +21,7 @@ import { SigninComponent } from './components/authentication/signin/signin.compo
 import { SignupComponent } from './components/authentication/signup/signup.component';
 import { SignoutComponent } from './components/authentication/signout/signout.component';
 import { ChangePasswordComponent } from './components/authentication/change-password/change-password.component';
+import { ArticleComponent } from './components/annotation/article/article.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ChangePasswordComponent } from './components/authentication/change-pass
     SigninComponent,
     SignupComponent,
     SignoutComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
