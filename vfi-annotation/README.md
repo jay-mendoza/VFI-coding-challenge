@@ -2,26 +2,42 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
 
-## Development server
+## Serve
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` to run it in browser. Navigate to `http://localhost:4200/` if it did not automatically open it.
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Angular Material
 
-## Build
+This project uses [Angular Material](https://material.angular.io/) for theming.
+Please run `ng add @angular/material` if it is looking for this dependency.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Crypto-JS
 
-## Running unit tests
+This project also uses [crypto-js](https://code.google.com/archive/p/crypto-js/) for cryptography and hashing functions.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Apps used in development
 
-## Running end-to-end tests
+All apps used are open-source / freeware.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Visual Studio Code
 
-## Further help
+Code editor. 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Download link: [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
+GitHub source code: [microsoft/vscode](https://github.com/microsoft/vscode).
+
+### Chrome
+
+Browser for testing and running. Also used for debugging (F12 Dev Tools).
+
+Download link: [Google Chrome - The New Chrome & Most Secure Web Browser](https://www.google.com/chrome/)
+
+### GitHub Desktop
+
+Git management IDE.
+
+Download link: [GitHub Desktop | Simple collaboration from your desktop](https://desktop.github.com/)
+Github source code: [desktop/desktop](https://github.com/desktop/desktop). Used to manage git functions.
+
