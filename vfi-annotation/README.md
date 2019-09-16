@@ -4,13 +4,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Serve
 
-Run `ng serve --open` to run it in browser. Navigate to `http://localhost:4200/` if it did not automatically open it.
+Run `ng serve --open` to run it in browser.<br />
+Navigate to `http://localhost:4200/` if it did not automatically open it.
 
 ## Dependencies
 
 ### Angular Material
 
-This project uses [Angular Material](https://material.angular.io/) for theming.
+This project uses [Angular Material](https://material.angular.io/) for theming.<br />
 Please run `ng add @angular/material` if it is looking for this dependency.
 
 ### Crypto-JS
@@ -23,21 +24,20 @@ All apps used are open-source / freeware.
 
 ### Visual Studio Code
 
-Code editor. 
-
-Download link: [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)
+Code editor. <br />
+<br />
+Download link: [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)<br />
 GitHub source code: [microsoft/vscode](https://github.com/microsoft/vscode).
 
 ### Chrome
 
-Browser for testing and running. Also used for debugging (F12 Dev Tools).
-
+Browser for testing and running. Also used for debugging (F12 Dev Tools).<br />
+<br />
 Download link: [Google Chrome - The New Chrome & Most Secure Web Browser](https://www.google.com/chrome/)
 
 ### GitHub Desktop
 
-Git management IDE.
-
-Download link: [GitHub Desktop | Simple collaboration from your desktop](https://desktop.github.com/)
-Github source code: [desktop/desktop](https://github.com/desktop/desktop). Used to manage git functions.
-
+Git management IDE.<br />
+<br />
+Download link: [GitHub Desktop | Simple collaboration from your desktop](https://desktop.github.com/)<br />
+Github source code: [desktop/desktop](https://github.com/desktop/desktop). Used to manage git functions.<br />

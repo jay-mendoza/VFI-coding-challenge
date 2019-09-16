@@ -9,26 +9,29 @@ import { UsersModel } from './users.model';
 export class UsersService {
 
     /** The localStorage key for the Users database. */
-    private readonly usersDB: string = 'usersDB_LocalStorage_Key';
-
-    /**
-     * Default Users database.
-     * @privateRemarks This is used ONLY for initializing the database.
-     * @remarks The password is 'password' sans the quotes.
-     */
-    private readonly usersDBDefault = {
-        "users": [
-            {
-                "username": "admin",
-                "password": "a6818b8188b36c44d17784c5551f63accc5deaf8786f9d0ad1ae3cd8d887cbab4f777286dbb315fb14854c8774dc0d10b5567e4a705536cc2a1d61ec0a16a7a6"
-            }
-        ]
-    };
+    private readonly usersDB: string = 'usersDB_LocalStorage_Key';    
 
     /**
      * Initializes a new instance of UsersService class.
      */
-    constructor() { }   
+    constructor() { }  
+    
+    /**
+     * Retrieves all the Users from localStorage database.
+     * @returns {UsersModel} The entire Users database from localStorage.
+     */
+    private readUsers(): UsersModel {
+        return JSON.parse(localStorage.getItem(this.usersDB));
+    }   
+
+    /**
+     * Retrieves a specific User from localStorage database.
+     * @param {string} username Username of the User to retrieve.
+     * @returns {UserModel} The User object.
+     */
+    public readUser(username: string): UserModel {
+        return this.readUsers().users.find((x: UserModel) => x.username === username);
+    }
 
     /**
      * Check if a User's password is correct or not.
@@ -115,15 +118,15 @@ export class UsersService {
         else {
             localStorage.setItem(this.usersDB, JSON.stringify(users));
         }
-    }
-
+    }   
+    
     /**
      * Initializes the users DB.
      * @privateRemarks Helper function. Special use ONLY for this program.
      * @returns {boolean} True is successful. Otherwise, false (DB already exists).
      */
     public initializeDatabase(): boolean {
-        if (localStorage.getItem(this.usersDB) === null) {
+        if (!localStorage.getItem(this.usersDB)) {
             localStorage.setItem(this.usersDB, JSON.stringify(this.usersDBDefault));
             return true;
         }
@@ -132,19 +135,16 @@ export class UsersService {
     }
 
     /**
-     * Retrieves a specific User from localStorage database.
-     * @param username Username of the User to retrieve.
-     * @returns {UserModel} The User object.
+     * Default Users database.
+     * @privateRemarks This is used ONLY for initializing the database.
+     * @remarks The password is 'password' sans the quotes.
      */
-    public readUser(username: string): UserModel {
-        return this.readUsers().users.find((x: UserModel) => x.username === username);
-    }
-
-    /**
-     * Retrieves all the Users from localStorage database.
-     * @returns {UsersModel} The entire Users database from localStorage.
-     */
-    private readUsers(): UsersModel {
-        return JSON.parse(localStorage.getItem(this.usersDB));
-    }    
+    private readonly usersDBDefault = {
+        "users": [
+            {
+                "username": "admin",
+                "password": "a6818b8188b36c44d17784c5551f63accc5deaf8786f9d0ad1ae3cd8d887cbab4f777286dbb315fb14854c8774dc0d10b5567e4a705536cc2a1d61ec0a16a7a6"
+            }
+        ]
+    };
 }

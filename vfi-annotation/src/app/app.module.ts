@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; 
+
 
 import {
   MatButtonModule,
+  MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
@@ -22,6 +25,10 @@ import { SignupComponent } from './components/authentication/signup/signup.compo
 import { SignoutComponent } from './components/authentication/signout/signout.component';
 import { ChangePasswordComponent } from './components/authentication/change-password/change-password.component';
 import { ArticleComponent } from './components/annotation/article/article.component';
+import { SafeHtmlPipe } from './shared/safe-html.pipe';
+import { AnnotateDirective } from './shared/annotate.directive';
+import { ContextMenuComponent } from './components/annotation/context-menu/context-menu.component';
+import { AnnotationComponent } from './components/annotation/annotation/annotation.component';
 
 @NgModule({
   declarations: [
@@ -33,18 +40,25 @@ import { ArticleComponent } from './components/annotation/article/article.compon
     SignupComponent,
     SignoutComponent,
     ChangePasswordComponent,
-    ArticleComponent
+    ArticleComponent,
+    SafeHtmlPipe,
+    AnnotateDirective,
+    ContextMenuComponent,
+    AnnotationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatButtonModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     MatMenuModule
   ],
+  entryComponents: [ContextMenuComponent],
   providers: [AuthenticationGuard, AuthenticationService],
   bootstrap: [AppComponent]
 })

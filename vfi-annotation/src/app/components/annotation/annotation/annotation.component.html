@@ -1,0 +1,2 @@
+<span *ngIf="!isAnnotated" id="wi-{{i}}">{{text.replace('\\n\\n', '')}}&nbsp;</span>
+<span *ngIf="isAnnotated" id="wi-{{i}}" appAnnotate>{{text.replace('\\n\\n', '')}}&nbsp;</span>

@@ -1,1 +1,9 @@
-<div>{{htmlArticle}}</div>
+
+<div (click)="openDialog($event)"> 
+    <ng-container *ngFor="let word of words; let i = index">
+        <span *ngIf="!annotatedWordIndexes.includes(i)" id="wi-{{i}}">{{word.replace('\\n\\n', '')}}&nbsp;</span>
+        <span *ngIf="annotatedWordIndexes.includes(i)" id="wi-{{i}}" appAnnotate>{{word.replace('\\n\\n', '')}}&nbsp;</span>
+        <br *ngIf="word.includes('\\n\\n')">
+        <br *ngIf="word.includes('\\n\\n')">
+    </ng-container>
+</div>

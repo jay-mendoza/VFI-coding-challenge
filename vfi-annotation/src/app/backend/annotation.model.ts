@@ -3,6 +3,9 @@
  */
 export class AnnotationModel {
 
+    /** ID of the Annotation */
+    public id: string;
+
     /** Author (username) of the Annotation */
     public author: string;
 
@@ -10,10 +13,10 @@ export class AnnotationModel {
     public comment: string; 
 
     /** Start index word of the annotation. */
-    public startWord: number;
+    public startIndex: number;
 
-    /** Number of words in the annotation. */
-    public wordCount: number;
+    /** Final indexw ord of the annotation. */
+    public finalIndex: number;
 
     /** Tag of the annotation. */
     public tag: string;
