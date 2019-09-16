@@ -1,6 +1,6 @@
 <div (click)="openDialog($event)">
     <ng-container *ngFor="let word of words; let i = index">
-        <span *ngIf="!word.isAnnotated" id="wi-{{i}}">{{word.word.replace('\\n\\n', '')}}&nbsp;</span>
+        <span *ngIf="!word.isAnnotated || !word.isTagged" id="wi-{{i}}">{{word.word.replace('\\n\\n', '')}}&nbsp;</span>
         <span *ngIf="word.isAnnotated && word.isTagged" id="wi-{{i}}" title="{{word.id}}"
             appAnnotate>{{word.word.replace('\\n\\n', '')}}&nbsp;</span>
         <br *ngIf="word.word.includes('\\n\\n')">
