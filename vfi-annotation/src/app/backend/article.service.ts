@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ArticleModel } from './article.model';
 import { ArticlesModel } from './articles.model';
+import { AnnotationModel } from './annotation.model';
 
 @Injectable({ providedIn: 'root' })
 /**
@@ -22,7 +23,7 @@ export class ArticleService {
      */
     private readArticles(): ArticlesModel {
         return JSON.parse(localStorage.getItem(this.articlesDB));
-    }   
+    }
 
     /**
      * Retrieves a specific Article from localStorage database.
@@ -32,9 +33,6 @@ export class ArticleService {
     public readArticle(id: string): ArticleModel {
         return this.readArticles().articles.find((x: ArticleModel) => x.id === id);
     }
-
-
-
 
 
     /**
@@ -49,7 +47,48 @@ export class ArticleService {
         else {
             localStorage.setItem(this.articlesDB, JSON.stringify(articles));
         }
-    }   
+    }
+
+    /**
+     * Add a new annotation in localStorage database.
+     * @param {string} articleId ID of the Annotation's Article to add.
+     * @param {AnnotationModel} annotation Annotation object to add.
+     */
+    public addAnnotation(articleId: string, annotation: AnnotationModel): void {
+        if (!localStorage.getItem(this.articlesDB)) {
+            this.initializeDatabase();
+        }
+
+        let articles: ArticlesModel = this.readArticles();
+        articles.articles.find(x => x.id == articleId).annotations.push(annotation);
+        this.resetDatabase(articles);
+    }
+
+    /**
+     * Update an existing annotation in localStorage database.
+     * @param {string} articleId ID of the Annotation's Article to update.
+     * @param {AnnotationModel} annotation Annotation object to update.
+     */
+    public updateAnnotation(articleId: string, annotation: AnnotationModel): void {
+        let articles: ArticlesModel = this.readArticles();
+        let annotations: AnnotationModel[] = articles.articles.find(x => x.id == articleId).annotations.filter(y => y.id != annotation.id);
+        articles.articles.find(x => x.id == articleId).annotations = annotations;
+        articles.articles.find(x => x.id == articleId).annotations.push(annotation);
+        this.resetDatabase(articles);
+
+    }
+
+    /**
+     * Delete an existing annotation in localStorage database.
+     * @param {string} articleId ID of the Annotation's Article to delete.
+     * @param {string} annotationId Annotation ID to delete.
+     */
+    public deleteAnnotation(articleId: string, annotationId: string): void {
+        let articles: ArticlesModel = this.readArticles();
+        let annotations: AnnotationModel[] = articles.articles.find(x => x.id == articleId).annotations.filter(y => y.id != annotationId);
+        articles.articles.find(x => x.id == articleId).annotations = annotations;
+        this.resetDatabase(articles);
+    }
 
     /**
      * Initializes the users DB.
@@ -83,16 +122,24 @@ export class ArticleService {
                         "comment": "",
                         "startIndex": 0,
                         "finalIndex": 4,
-                        "tag": [ "tag x", "start" ]
+                        "tag": ["tag x", "start"]
                     },
                     {
                         "id": "6-6",
                         "author": "admin",
-                        "comment": "",
+                        "comment": "This is a sample annotation",
                         "startIndex": 6,
                         "finalIndex": 6,
-                        "tag": [ "tag x" ]
+                        "tag": ["tag x"]
                     },
+                    {
+                        "id": "10-15",
+                        "author": "j",
+                        "comment": "This is a sample annotation",
+                        "startIndex": 10,
+                        "finalIndex": 15,
+                        "tag": ["start"]
+                    }
                 ]
             }
         ]

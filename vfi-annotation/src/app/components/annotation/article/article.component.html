@@ -1,9 +1,20 @@
-
-<div (click)="openDialog($event)"> 
+<div (click)="openDialog($event)">
     <ng-container *ngFor="let word of words; let i = index">
-        <span *ngIf="!annotatedWordIndexes.includes(i)" id="wi-{{i}}">{{word.replace('\\n\\n', '')}}&nbsp;</span>
-        <span *ngIf="annotatedWordIndexes.includes(i)" id="wi-{{i}}" appAnnotate>{{word.replace('\\n\\n', '')}}&nbsp;</span>
-        <br *ngIf="word.includes('\\n\\n')">
-        <br *ngIf="word.includes('\\n\\n')">
+        <span *ngIf="!word.isAnnotated" id="wi-{{i}}">{{word.word.replace('\\n\\n', '')}}&nbsp;</span>
+        <span *ngIf="word.isAnnotated && word.isTagged" id="wi-{{i}}" title="{{word.id}}"
+            appAnnotate>{{word.word.replace('\\n\\n', '')}}&nbsp;</span>
+        <br *ngIf="word.word.includes('\\n\\n')">
+        <br *ngIf="word.word.includes('\\n\\n')">
     </ng-container>
+</div>
+<br/>
+<br/>
+<div>
+    <h1 mat-dialog-title>
+        Tags:
+    </h1>
+    <mat-button-toggle-group #primeGroup="matButtonToggleGroup" (change)="tagSelectionChange($event)" [value]="noTag">
+        <mat-button-toggle [value]="noTag" color="primary">{{noTag}}</mat-button-toggle>
+        <mat-button-toggle *ngFor="let tag of allUniqueTags;" [value]="tag">{{tag}}</mat-button-toggle>
+    </mat-button-toggle-group>
 </div>

@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import {
-  MatButtonModule,
-  MatDialogModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,39 +30,46 @@ import { ChangePasswordComponent } from './components/authentication/change-pass
 import { ArticleComponent } from './components/annotation/article/article.component';
 import { SafeHtmlPipe } from './shared/safe-html.pipe';
 import { AnnotateDirective } from './shared/annotate.directive';
-import { ContextMenuComponent } from './components/annotation/context-menu/context-menu.component';
 import { AnnotationComponent } from './components/annotation/annotation/annotation.component';
+import { ResetArticlesComponent } from './components/resets/reset-articles.component';
+import { ResetUsersComponent } from './components/resets/reset-users.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    UserMenuComponent,
-    SplashComponent,
-    SigninComponent,
-    SignupComponent,
-    SignoutComponent,
-    ChangePasswordComponent,
-    ArticleComponent,
-    SafeHtmlPipe,
-    AnnotateDirective,
-    ContextMenuComponent,
-    AnnotationComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatMenuModule
-  ],
-  entryComponents: [ContextMenuComponent],
-  providers: [AuthenticationGuard, AuthenticationService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        UserMenuComponent,
+        SplashComponent,
+        SigninComponent,
+        SignupComponent,
+        SignoutComponent,
+        ChangePasswordComponent,
+        ArticleComponent,
+        SafeHtmlPipe,
+        AnnotateDirective,
+        AnnotationComponent,
+        AnnotationComponent,
+        ResetArticlesComponent,
+        ResetUsersComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatChipsModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatMenuModule
+    ],
+    entryComponents: [AnnotationComponent],
+    providers: [AuthenticationGuard, AuthenticationService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,7 +19,7 @@ export class AnnotationModel {
     public finalIndex: number;
 
     /** Tag of the annotation. */
-    public tag: string;
+    public tag: string[];
 
     /**
      * Initializes a new instance of AnnotationModel object.
