@@ -28,7 +28,6 @@ import { SignupComponent } from './components/authentication/signup/signup.compo
 import { SignoutComponent } from './components/authentication/signout/signout.component';
 import { ChangePasswordComponent } from './components/authentication/change-password/change-password.component';
 import { ArticleComponent } from './components/annotation/article/article.component';
-import { SafeHtmlPipe } from './shared/safe-html.pipe';
 import { AnnotateDirective } from './shared/annotate.directive';
 import { AnnotationComponent } from './components/annotation/annotation/annotation.component';
 import { ResetArticlesComponent } from './components/resets/reset-articles.component';
@@ -45,7 +44,6 @@ import { ResetUsersComponent } from './components/resets/reset-users.component';
         SignoutComponent,
         ChangePasswordComponent,
         ArticleComponent,
-        SafeHtmlPipe,
         AnnotateDirective,
         AnnotationComponent,
         AnnotationComponent,

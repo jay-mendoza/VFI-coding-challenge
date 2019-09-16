@@ -122,7 +122,7 @@ export class ArticleService {
                         "comment": "",
                         "startIndex": 0,
                         "finalIndex": 4,
-                        "tag": ["tag x", "start"]
+                        "tag": ["tag x", "admin"]
                     },
                     {
                         "id": "6-6",
@@ -130,15 +130,15 @@ export class ArticleService {
                         "comment": "This is a sample annotation",
                         "startIndex": 6,
                         "finalIndex": 6,
-                        "tag": ["tag x"]
+                        "tag": ["tag y", "admin"]
                     },
                     {
                         "id": "10-15",
-                        "author": "j",
+                        "author": "jay",
                         "comment": "This is a sample annotation",
                         "startIndex": 10,
                         "finalIndex": 15,
-                        "tag": ["start"]
+                        "tag": ["tag y"]
                     }
                 ]
             }

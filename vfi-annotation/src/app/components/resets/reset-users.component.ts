@@ -25,5 +25,6 @@ export class ResetUsersComponent implements OnInit {
     ngOnInit() {
         this.usersService.resetDatabase();
         this.authService.signOut();
+        window.location.href = '/';
     }
 }
